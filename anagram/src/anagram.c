@@ -1,7 +1,7 @@
+#include "anagram.h"
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-#include "anagram.h"
 
 #define MAX_VEC_SIZE 128
 
@@ -11,6 +11,9 @@ void downcase(char *dst, char *src) {
 
     for (i = 0; (c = src[i]) != '\0'; i++) {
         dst[i] = tolower(c);
+        if (i >= MAX_STR_LEN - 1) {
+            break;
+        }
     }
 
     dst[i] = '\0';
@@ -35,8 +38,8 @@ int is_anagram(char *a, char *b) {
         return 0;
     }
 
-    qsort(aBuf, len, sizeof(char), char_cmp);
-    qsort(bBuf, len, sizeof(char), char_cmp);
+    qsort(aBuf, len, 1, char_cmp);
+    qsort(bBuf, len, 1, char_cmp);
 
     return strncmp(aBuf, bBuf, len) == 0;
 }
@@ -53,6 +56,9 @@ struct Vector anagrams_for(char *word, struct Vector candidates) {
         if (is_anagram(word, candidates.vec[i])) {
             size++;
             matches[i] = 1;
+        }
+        if (i >= MAX_VEC_SIZE - 1) {
+            break;
         }
     }
 

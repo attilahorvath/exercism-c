@@ -1,7 +1,7 @@
+#include "phone_number.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include "phone_number.h"
 
 #define NUMBER_LENGTH 11
 #define BUFFER_LENGTH (NUMBER_LENGTH + 1)
@@ -9,7 +9,7 @@
 #define FORMATTED_LENGTH 15
 
 char *phone_number_clean(const char *input) {
-    char *number = (char*)malloc(sizeof(char) * (NUMBER_LENGTH));
+    char *number = (char*)malloc(NUMBER_LENGTH);
 
     char buffer[BUFFER_LENGTH];
     char c;
@@ -53,7 +53,7 @@ char *phone_number_clean(const char *input) {
 
 char *phone_number_get_area_code(const char *input) {
     char *number = phone_number_clean(input);
-    char *area_code = (char*)malloc(sizeof(char) * AREA_CODE_LENGTH);
+    char *area_code = (char*)malloc(AREA_CODE_LENGTH);
 
     snprintf(area_code, AREA_CODE_LENGTH, "%c%c%c",
              number[0], number[1], number[2]);
@@ -63,9 +63,9 @@ char *phone_number_get_area_code(const char *input) {
     return area_code;
 }
 
-char *phone_number_format(const char* input) {
+char *phone_number_format(const char *input) {
     char *number = phone_number_clean(input);
-    char *formatted = (char*)malloc(sizeof(char) * FORMATTED_LENGTH);
+    char *formatted = (char*)malloc(FORMATTED_LENGTH);
 
     snprintf(formatted, FORMATTED_LENGTH, "(%c%c%c) %c%c%c-%c%c%c%c",
              number[0], number[1], number[2], number[3], number[4],

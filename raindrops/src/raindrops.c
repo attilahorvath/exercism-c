@@ -1,7 +1,7 @@
-#include <stdio.h>
 #include "raindrops.h"
+#include <stdio.h>
 
-char *convert(char *buffer, size_t buffer_length, int number) {
+const char *convert(char *buffer, size_t buffer_length, int number) {
     if (number % 3 == 0 || number % 5 == 0 || number % 7 == 0) {
         snprintf(buffer, buffer_length, "%s%s%s",
                  number % 3 == 0 ? "Pling" : "",

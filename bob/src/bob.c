@@ -1,5 +1,5 @@
-#include <ctype.h>
 #include "bob.h"
+#include <ctype.h>
 
 enum statement_type { question, yell, nothing, other, not_alpha };
 

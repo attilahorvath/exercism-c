@@ -1,6 +1,5 @@
-#include <stdio.h>
-#include <stddef.h>
 #include "hello_world.h"
+#include <stdio.h>
 
 #define BUFFER_LENGTH 128
 

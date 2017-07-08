@@ -1,6 +1,6 @@
+#include "acronym.h"
 #include <stdlib.h>
 #include <ctype.h>
-#include "acronym.h"
 
 #define MAX_LENGTH 32
 
@@ -19,6 +19,9 @@ char *abbreviate(char *phrase) {
             if (!last_alnum) {
                 length++;
                 buffer[j++] = toupper(c);
+                if (j >= MAX_LENGTH) {
+                    break;
+                }
             }
 
             last_alnum = 1;
@@ -27,7 +30,7 @@ char *abbreviate(char *phrase) {
         }
     }
 
-    abbreviation = (char*)malloc(sizeof(char) * (length + 1));
+    abbreviation = (char*)malloc(length + 1);
 
     for (i = 0; i < length; i++) {
         abbreviation[i] = buffer[i];

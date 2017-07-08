@@ -1,6 +1,6 @@
 #include "hamming.h"
 
-int compute(char *a, char *b) {
+int compute(const char *a, const char *b) {
     int d = 0;
 
     for (int i = 0; a[i] != '\0' && b[i] != '\0'; i++) {

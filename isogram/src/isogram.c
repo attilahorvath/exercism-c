@@ -1,7 +1,7 @@
-#include <ctype.h>
 #include "isogram.h"
+#include <ctype.h>
 
-int isIsogram(char *string) {
+int isIsogram(const char *string) {
     int c1, c2;
 
     for (int i = 0; (c1 = string[i]) != '\0'; i++) {
