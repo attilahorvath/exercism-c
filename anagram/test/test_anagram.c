@@ -289,8 +289,8 @@ int main(void)
    RUN_TEST(test_does_not_detect_a_differently_cased_word_as_its_own_anagram);
 
    // Bonus points
-   // RUN_TEST(test_unicode_anagrams);
-   // RUN_TEST(test_misleading_unicode_anagrams);
+   RUN_TEST(test_unicode_anagrams);
+   RUN_TEST(test_misleading_unicode_anagrams);
 
    UnityEnd();
    return 0;

@@ -1,7 +1,7 @@
 #ifndef ANAGRAM_H
 #define ANAGRAM_H
 
-#define MAX_STR_LEN 20
+#define MAX_STR_LEN 128
 
 struct Vector {
     char (*vec)[MAX_STR_LEN];
